@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace recipeSearchFlyout.Models
 {
-	public class Recipe
+	public class Item
 	{
         public string Id { get; set; }
         public string RecipeName { get; set; }
