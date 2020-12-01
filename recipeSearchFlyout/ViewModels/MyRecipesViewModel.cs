@@ -2,9 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
 using recipeSearchFlyout.Models;
 using recipeSearchFlyout.Views;
 
@@ -12,44 +10,77 @@ namespace recipeSearchFlyout.ViewModels
 {
 	public class MyRecipesViewModel : BaseViewModel
 	{
-		public ObservableCollection<Item> Items { get; set; }
-		public Command LoadItemsCommand { get; set; }
+        public Item _selectedRecipe;
 
-		public MyRecipesViewModel()
-		{
-			Title = "My Recipes";
-			Items = new ObservableCollection<Item>();
-			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+        public ObservableCollection<Item> Recipes { get; }
+        public Command LoadRecipesCommand { get; }
+        public Command NewRecipeCommand { get; }
+        public Command<Item> RecipeTapped { get; }
 
-			MessagingCenter.Subscribe<NewRecipePage, Item>(this, "AddItem", async (obj, item) =>
-			{
-				var newItem = item as Item;
-				Items.Add(newItem);
-				await DataStore.AddItemAsync(newItem);
-			});
-		}
+        public MyRecipesViewModel()
+        {
+            Title = "Recipes";
+			Recipes = new ObservableCollection<Item>();
+            LoadRecipesCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-		async Task ExecuteLoadItemsCommand()
-		{
-			IsBusy = true;
+			RecipeTapped = new Command<Item>(OnRecipeSelected);
+            NewRecipeCommand = new Command(OnNewRecipe);
+        }
 
-			try
-			{
-				Items.Clear();
-				var items = await DataStore.GetItemsAsync(true);
-				foreach (var item in items)
-				{
-					Items.Add(item);
-				}
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine(ex);
-			}
-			finally
-			{
-				IsBusy = false;
-			}
-		}
-	}
+        async Task ExecuteLoadItemsCommand()
+        {
+            IsBusy = true;
+
+            try
+            {
+                Recipes.Clear();
+                var recipes = await DataStore.GetRecipesAsync(true);
+                foreach (var recipe in recipes)
+                {
+                    Recipes.Add(recipe);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        public void OnAppearing()
+        {
+            IsBusy = true;
+            SelectedRecipe = null;
+
+            //await ExecuteLoadItemsCommand();
+            LoadRecipesCommand.Execute(null);
+        }
+
+        public Item SelectedRecipe
+        {
+            get => _selectedRecipe;
+            set
+            {
+                SetProperty(ref _selectedRecipe, value);
+                OnRecipeSelected(value);
+            }
+        }
+
+        private async void OnNewRecipe(object obj)
+        {
+            // await Shell.Current.GoToAsync(nameof(NewRecipePage));
+        }
+
+        async void OnRecipeSelected(Item recipe)
+        {
+            if (recipe == null)
+                return;
+
+            // This will push the ItemDetailPage onto the navigation stack
+            // await Shell.Current.GoToAsync($"{nameof(RecipeDetailPage)}?{nameof(RecipeDetailPage.ItemId)}={item.Id}");
+        }
+    }
 }
