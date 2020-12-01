@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using recipeSearchFlyout.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -27,14 +28,13 @@ namespace recipeSearchFlyout.ViewModels
             NoResultsLabelVisible = false;
             SearchResultsVisible = true;
 
-            ItemTapped = new Command<Hit>(OnItemSelected);
-            SearchCommand = new Command(async () => await OnSearch());
-
             MessagingCenter.Subscribe<SearchResultsPage, string>(this, "ShowRecipeHits", (sender, searchQuery) =>
             {
                 SearchQuery = searchQuery;
             });
 
+            ItemTapped = new Command<Hit>(OnItemSelected);
+            SearchCommand = new Command(async () => await OnSearch());
         }
 
         public RecipeData RecipeData
@@ -71,6 +71,11 @@ namespace recipeSearchFlyout.ViewModels
 
         async Task OnSearch()
         {
+            //MessagingCenter.Subscribe<SearchResultsPage, string>(this, "ShowRecipeHits", (sender, searchQuery) =>
+            //{
+            //    SearchQuery = searchQuery;
+            //});
+
             NoResultsLabelVisible = false;
 
             if (!string.IsNullOrWhiteSpace(SearchQuery) || !string.IsNullOrWhiteSpace(SearchFilter))
@@ -97,7 +102,7 @@ namespace recipeSearchFlyout.ViewModels
                     App.Data = RecipeData;
                     // AppShell.Data = RecipeData;
 
-                    // OnPropertyChanged(nameof(RecipeData)); // tells Xaml view to update
+                    OnPropertyChanged(nameof(RecipeData)); // tells Xaml view to update
                 }
 
                 // OnPropertyChanged(SearchQuery);
