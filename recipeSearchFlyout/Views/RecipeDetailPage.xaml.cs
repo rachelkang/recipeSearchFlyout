@@ -22,15 +22,6 @@ namespace recipeSearchFlyout.Views
 		public RecipeDetailPage()
 		{
 			InitializeComponent();
-
-			var item = new Item
-			{
-				Text = "Item 1",
-				Description = "This is an item description."
-			};
-
-			viewModel = new RecipeDetailViewModel(item);
-			BindingContext = viewModel;
 		}
 	}
 }

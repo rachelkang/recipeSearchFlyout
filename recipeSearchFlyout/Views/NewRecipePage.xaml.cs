@@ -15,14 +15,6 @@ namespace recipeSearchFlyout.Views
 		public NewRecipePage()
 		{
 			InitializeComponent();
-
-			Item = new Item
-			{
-				Text = "Item name",
-				Description = "This is an item description."
-			};
-
-			BindingContext = this;
 		}
 
 		async void Save_Clicked(object sender, EventArgs e)
