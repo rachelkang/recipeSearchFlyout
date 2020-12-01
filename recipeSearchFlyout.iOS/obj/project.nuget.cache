@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "SBD76Z0xyoHzJalo7kblNl0nFuhymmodVtB9Z/To7kO+o4a0dsvnrYNHvEN3+unYRx3nzy/Res6EQSyOlJJ5gw==",
+  "success": true,
+  "projectFilePath": "/Users/rachelkang/recipeSearchFlyout/recipeSearchFlyout.iOS/recipeSearchFlyout.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/rachelkang/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/rachelkang/.nuget/packages/resizetizer.nt/0.2.0/resizetizer.nt.0.2.0.nupkg.sha512",
+    "/Users/rachelkang/.nuget/packages/sharpnado.shadows/1.2.0/sharpnado.shadows.1.2.0.nupkg.sha512",
+    "/Users/rachelkang/.nuget/packages/thomaslevesque.weakevent/4.1.0/thomaslevesque.weakevent.4.1.0.nupkg.sha512",
+    "/Users/rachelkang/.nuget/packages/xamanimation/1.3.0/xamanimation.1.3.0.nupkg.sha512",
+    "/Users/rachelkang/.nuget/packages/xamarin.communitytoolkit/1.0.0-pre5/xamarin.communitytoolkit.1.0.0-pre5.nupkg.sha512",
+    "/Users/rachelkang/.nuget/packages/xamarin.essentials/1.5.3.2/xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "/Users/rachelkang/.nuget/packages/xamarin.forms/5.0.0.1709-pre4/xamarin.forms.5.0.0.1709-pre4.nupkg.sha512",
+    "/Users/rachelkang/.nuget/packages/xamarin.forms.visual.material/5.0.0.1709-pre4/xamarin.forms.visual.material.5.0.0.1709-pre4.nupkg.sha512",
+    "/Users/rachelkang/.nuget/packages/xamarin.ios.materialcomponents/92.0.0/xamarin.ios.materialcomponents.92.0.0.nupkg.sha512",
+    "/Users/rachelkang/.nuget/packages/xamarin.plugin.sharedtransitions/2.4.0/xamarin.plugin.sharedtransitions.2.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

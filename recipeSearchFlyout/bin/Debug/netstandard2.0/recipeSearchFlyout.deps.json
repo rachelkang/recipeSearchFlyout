@@ -1,0 +1,303 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "recipeSearchFlyout/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "12.0.3",
+          "Resizetizer.NT": "0.2.0",
+          "Sharpnado.Shadows": "1.2.0",
+          "Xamanimation": "1.3.0",
+          "Xamarin.CommunityToolkit": "1.0.0-pre5",
+          "Xamarin.Essentials": "1.5.3.2",
+          "Xamarin.Forms": "5.0.0.1709-pre4",
+          "Xamarin.Forms.Visual.Material": "5.0.0.1709-pre4",
+          "Xamarin.Plugin.SharedTransitions": "2.4.0"
+        },
+        "runtime": {
+          "recipeSearchFlyout.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "Resizetizer.NT/0.2.0": {},
+      "Sharpnado.Shadows/1.2.0": {
+        "dependencies": {
+          "ThomasLevesque.WeakEvent": "4.1.0",
+          "Xamarin.Forms": "5.0.0.1709-pre4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Sharpnado.Shadows.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Numerics.Vectors.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "System.Reflection.Emit.ILGeneration/4.7.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Reflection.Emit.ILGeneration.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "System.Reflection.Emit.Lightweight/4.7.0": {
+        "dependencies": {
+          "System.Reflection.Emit.ILGeneration": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reflection.Emit.Lightweight.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.3": {
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "4.0.4.1",
+            "fileVersion": "4.6.28619.1"
+          }
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.4": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "assemblyVersion": "4.2.0.1",
+            "fileVersion": "4.6.28619.1"
+          }
+        }
+      },
+      "ThomasLevesque.WeakEvent/4.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/WeakEvent.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.1.0.0"
+          }
+        }
+      },
+      "Xamanimation/1.3.0": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.1709-pre4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamanimation.dll": {
+            "assemblyVersion": "1.3.0.0",
+            "fileVersion": "1.3.0.0"
+          }
+        }
+      },
+      "Xamarin.CommunityToolkit/1.0.0-pre5": {
+        "dependencies": {
+          "System.Reflection.Emit.Lightweight": "4.7.0",
+          "System.Threading.Tasks.Extensions": "4.5.4",
+          "Xamarin.Forms": "5.0.0.1709-pre4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.5.3.2": {
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Xamarin.Forms/5.0.0.1709-pre4": {
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "5.0.0.455"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "5.0.0.455"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "5.0.0.455"
+          }
+        }
+      },
+      "Xamarin.Forms.Visual.Material/5.0.0.1709-pre4": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.1709-pre4"
+        }
+      },
+      "Xamarin.Plugin.SharedTransitions/2.4.0": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.1709-pre4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Plugin.SharedTransitions.dll": {
+            "assemblyVersion": "2.4.0.0",
+            "fileVersion": "2.4.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "recipeSearchFlyout/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "Resizetizer.NT/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TpsW2kIVW0ILvSG0UGDljKWBakCewnWClCAISxLgtrZWm/Bn68RHEb0/XkcOSdG15sSBHVznoKBLAAQ70XFzfA==",
+      "path": "resizetizer.nt/0.2.0",
+      "hashPath": "resizetizer.nt.0.2.0.nupkg.sha512"
+    },
+    "Sharpnado.Shadows/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zjHTh6pZXpGb0viQ5wL5XtFrQNA5xeNzkveVAJvH8x7HLFRnUIXaJ6QzbUfeAdAL2nEAJSffcaeE3wQP6a6m0g==",
+      "path": "sharpnado.shadows/1.2.0",
+      "hashPath": "sharpnado.shadows.1.2.0.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit.ILGeneration/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AucBYo3DSI0IDxdUjKksBcQJXPHyoPyrCXYURW1WDsLI4M65Ar/goSHjdnHOAY9MiYDNKqDlIgaYm+zL2hA1KA==",
+      "path": "system.reflection.emit.ilgeneration/4.7.0",
+      "hashPath": "system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit.Lightweight/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "hashPath": "system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3TIsJhD1EiiT0w2CcDMN/iSSwnNnsrnbzeVHSKkaEgV85txMprmuO+Yq2AdSbeVGcg28pdNDTPK87tJhX7VFHw==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.3",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512"
+    },
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    },
+    "ThomasLevesque.WeakEvent/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mcp8UoYXWvPmud7UJmREULQLxLmX6SYet2pyZUHpcmIiku3JoqEilPUu9QeUZrV7fOCp0Pfva/VDhG+n3afGyg==",
+      "path": "thomaslevesque.weakevent/4.1.0",
+      "hashPath": "thomaslevesque.weakevent.4.1.0.nupkg.sha512"
+    },
+    "Xamanimation/1.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CXYLcQulqAL9qxRMecm5P5YXbOWiBGK0mgtV2buyHehLjbj6Hf+EdHs8cqVztrD47/zAiTAz2yDCURRXC8d33Q==",
+      "path": "xamanimation/1.3.0",
+      "hashPath": "xamanimation.1.3.0.nupkg.sha512"
+    },
+    "Xamarin.CommunityToolkit/1.0.0-pre5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5rXf0tcwYqhp+YnucmpZ+I/N3ut/797wmVr9qIzrBEmQnWARYbEYwhvkyYZOEjX9/9FBno45ZmpnwSOHorlGBA==",
+      "path": "xamarin.communitytoolkit/1.0.0-pre5",
+      "hashPath": "xamarin.communitytoolkit.1.0.0-pre5.nupkg.sha512"
+    },
+    "Xamarin.Essentials/1.5.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BSLgDJUOPFRwTpQaftM+s4qb/MsTjrqXulEYDOcK6KF3i0Orf75zo3RwRfqnQ8WfpoEFxW/v0jgcPWCvOMgHxg==",
+      "path": "xamarin.essentials/1.5.3.2",
+      "hashPath": "xamarin.essentials.1.5.3.2.nupkg.sha512"
+    },
+    "Xamarin.Forms/5.0.0.1709-pre4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4dIJ7Vs0SJl92vglE2/UkCL5FDDMYPx7ezyfz/3xUqZmNbzz74cpKeEcuy7eW43u/nfDxEX+nyxRwL4+dzHmQg==",
+      "path": "xamarin.forms/5.0.0.1709-pre4",
+      "hashPath": "xamarin.forms.5.0.0.1709-pre4.nupkg.sha512"
+    },
+    "Xamarin.Forms.Visual.Material/5.0.0.1709-pre4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nX/96RUujNNfmDfUHvhcqe0GtN6VZTnJarvdlwjihQpAyUfZ2lCeheGooGvf4E3HFxAaveLJTYLr01+S7bROrA==",
+      "path": "xamarin.forms.visual.material/5.0.0.1709-pre4",
+      "hashPath": "xamarin.forms.visual.material.5.0.0.1709-pre4.nupkg.sha512"
+    },
+    "Xamarin.Plugin.SharedTransitions/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-upju4Pst1knGfdLQWWjT4ASuKQk2s7RhK8B4Yw6TILRerPZmhPmqJ/fV8NIR6HuLIsX8CxOg8fR+tNjOC6YwFA==",
+      "path": "xamarin.plugin.sharedtransitions/2.4.0",
+      "hashPath": "xamarin.plugin.sharedtransitions.2.4.0.nupkg.sha512"
+    }
+  }
+}

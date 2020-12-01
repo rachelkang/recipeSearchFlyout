@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="recipeSearchFlyout.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="Primary">#2BB0ED</Color>
+            <Color x:Key="Background">#F2F7FF</Color>
+            <LinearGradientBrush x:Key="BlueGradient" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="White" Offset="0" />
+                <GradientStop Color="{StaticResource Primary}" Offset="1.0" />
+            </LinearGradientBrush>
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>

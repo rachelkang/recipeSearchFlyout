@@ -1,0 +1,103 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/rachelkang/recipeSearchFlyout/recipeSearchFlyout/recipeSearchFlyout.csproj": {}
+  },
+  "projects": {
+    "/Users/rachelkang/recipeSearchFlyout/recipeSearchFlyout/recipeSearchFlyout.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rachelkang/recipeSearchFlyout/recipeSearchFlyout/recipeSearchFlyout.csproj",
+        "projectName": "recipeSearchFlyout",
+        "projectPath": "/Users/rachelkang/recipeSearchFlyout/recipeSearchFlyout/recipeSearchFlyout.csproj",
+        "packagesPath": "/Users/rachelkang/.nuget/packages/",
+        "outputPath": "/Users/rachelkang/recipeSearchFlyout/recipeSearchFlyout/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/rachelkang/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "/Users/rachelkang/Desktop/nugets": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Resizetizer.NT": {
+              "target": "Package",
+              "version": "[0.2.0, )"
+            },
+            "Sharpnado.Shadows": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Xamanimation": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "Xamarin.CommunityToolkit": {
+              "target": "Package",
+              "version": "[1.0.0-pre5, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.3.2, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.1709-pre4, )"
+            },
+            "Xamarin.Forms.Visual.Material": {
+              "target": "Package",
+              "version": "[5.0.0.1709-pre4, )"
+            },
+            "Xamarin.Plugin.SharedTransitions": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

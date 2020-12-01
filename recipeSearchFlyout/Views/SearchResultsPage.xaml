@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:recipeSearchFlyout.Views"
+             xmlns:vm="clr-namespace:recipeSearchFlyout.ViewModels"
+             x:Class="recipeSearchFlyout.Views.SearchResultsPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             Title="{Binding Title}"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:anim="clr-namespace:Xamanimation;assembly=Xamanimation">
+
+    <ContentPage.BindingContext>
+        <vm:SearchResultsViewModel />
+    </ContentPage.BindingContext>
+
+     <StackLayout Margin="5,5,5,0">
+        <SearchBar x:Name="searchBar"
+                   ios:SearchBar.SearchBarStyle="Default"
+                   sharedTransitions:Transition.Name="searchBarTransition"
+                   BackgroundColor="White"
+                   Placeholder="Search recipes..."
+                   CancelButtonColor="{StaticResource Primary}"
+                   Text="{Binding SearchQuery}"
+                   PlaceholderColor="Gray"
+                   TextColor="Black"
+                   SearchCommand="{Binding SearchCommand}"
+                   SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
+        <Label Text="{Binding NoResultsLabel}" IsVisible="{Binding NoResultsLabelVisible}" Padding="20,0,20,0" HorizontalTextAlignment="Center" FontAttributes="Italic" TextColor="{StaticResource Primary}"/>
+        <CollectionView x:Name="HitsListView" ItemsSource="{Binding RecipeData.Hits}" SelectionMode="None" Margin="10" IsVisible="{Binding SearchResultsVisible}" AutomationProperties.IsInAccessibleTree="true" AutomationProperties.Name="Search results list" AutomationProperties.HelpText="Select one of the search results to see recipe details">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate AutomationProperties.IsInAccessibleTree="true" AutomationProperties.LabeledBy="{x:Reference recipeName}">
+                <DataTemplate>
+                    <sh:Shadows CornerRadius="15" Shades="{sh:SingleShade Offset='0,5', BlurRadius=10, Opacity=0.2, Color='Black'}">
+                        <Frame CornerRadius="20" HasShadow="False" Margin="10">
+                            <StackLayout HeightRequest="200" VerticalOptions="Fill" HorizontalOptions="Fill" Padding="-20">
+                                <Image Source="{Binding Recipe.ImageUrl}" VerticalOptions="FillAndExpand" Aspect="AspectFill" Margin="0,0,0,-100" />
+                                <Label x:Name="recipeName" Padding="10" Text="{Binding Recipe.RecipeName}" LineBreakMode="WordWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" BackgroundColor="White"/>
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RecipeSearchViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </sh:Shadows>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.Behaviors>
+                <anim:EntranceTransition Duration="200"/>
+            </CollectionView.Behaviors>
+        </CollectionView>
+        <StackLayout.Behaviors>
+            <anim:EntranceTransition Duration="500"/>
+        </StackLayout.Behaviors>
+    </StackLayout>
+</ContentPage>
