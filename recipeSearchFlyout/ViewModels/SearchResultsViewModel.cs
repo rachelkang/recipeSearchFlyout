@@ -30,7 +30,7 @@ namespace recipeSearchFlyout.ViewModels
             ItemTapped = new Command<Hit>(OnItemSelected);
             SearchCommand = new Command(async () => await OnSearch());
 
-            MessagingCenter.Subscribe<SearchResultsViewModel, string>(this, "ShowRecipeHits", (sender, searchQuery) =>
+            MessagingCenter.Subscribe<SearchResultsPage, string>(this, "ShowRecipeHits", (sender, searchQuery) =>
             {
                 SearchQuery = searchQuery;
             });

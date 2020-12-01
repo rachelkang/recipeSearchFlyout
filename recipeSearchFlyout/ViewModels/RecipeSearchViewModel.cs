@@ -77,7 +77,7 @@ namespace recipeSearchFlyout.ViewModels
                     // await Shell.Current.GoToAsync($"{nameof(RecipeSearchPage)}?SearchQuery={SearchQuery}&SearchFilter={urlEncodedFilter}");
 
                     // MessagingCenter.Send<RecipeSearchViewModel, string, string>(this, "SearchRecipe", SearchQuery, urlEncodedFilter);
-                    MessagingCenter.Send<RecipeSearchViewModel, string>(this, "SearchRecipe", SearchQuery);
+                    MessagingCenter.Send(this, "SearchRecipe", SearchQuery);
 
                     SearchQuery = string.Empty;
                     RecipeTypeButtonsVisible = true;

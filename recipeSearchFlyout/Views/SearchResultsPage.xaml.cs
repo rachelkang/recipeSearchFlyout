@@ -12,12 +12,11 @@ namespace recipeSearchFlyout.Views
 {
 	public partial class SearchResultsPage : ContentPage
 	{
-
 		SearchResultsViewModel _viewModel;
 
 		public SearchResultsPage(string searchQuery)
 		{
-			MessagingCenter.Send<SearchResultsPage, string>(this, "ShowRecipeHits", searchQuery);
+			MessagingCenter.Send(this, "ShowRecipeHits", searchQuery);
 			InitializeComponent();
 		}
 
