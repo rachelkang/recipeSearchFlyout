@@ -22,7 +22,7 @@ namespace recipeSearchFlyout
 
 		public static RecipeData Data { get; set; }
 
-		public static Models.Recipe[] MyRecipes { get; set; }
+		public static Item[] MyRecipes { get; set; }
 
 		protected override void OnStart()
 		{

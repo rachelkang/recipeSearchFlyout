@@ -27,8 +27,8 @@ namespace recipeSearchFlyout.Views
 		async void OnItemSelected(object sender, EventArgs args)
 		{
 			var layout = (BindableObject)sender;
-			var item = (Item)layout.BindingContext;
-			await Navigation.PushAsync(new RecipeDetailPage(new RecipeDetailViewModel(item)));
+			var recipe = (Models.Item)layout.BindingContext;
+			// await Navigation.PushAsync(new RecipeDetailPage(new RecipeDetailViewModel(recipe)));
 		}
 
 		async void AddItem_Clicked(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace recipeSearchFlyout.Views
 		{
 			base.OnAppearing();
 
-			if (viewModel.Items.Count == 0)
+			if (viewModel.Recipes.Count == 0)
 				viewModel.IsBusy = true;
 		}
 	}
