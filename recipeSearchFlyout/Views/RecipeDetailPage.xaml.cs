@@ -10,18 +10,27 @@ namespace recipeSearchFlyout.Views
 {
 	public partial class RecipeDetailPage : ContentPage
 	{
-		RecipeDetailViewModel viewModel;
+        RecipeDetailViewModel _viewModel;
+        string _recipeId;
 
-		public RecipeDetailPage(RecipeDetailViewModel viewModel)
-		{
-			InitializeComponent();
+        public RecipeDetailPage(string id)
+        {
+            InitializeComponent();
+            BindingContext = _viewModel = new RecipeDetailViewModel();
 
-			BindingContext = this.viewModel = viewModel;
-		}
+            _viewModel.RecipeId = id;
+            _recipeId = id;
+        }
 
-		public RecipeDetailPage()
-		{
-			InitializeComponent();
-		}
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
+        }
+
+        async void EditRecipe_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new EditRecipePage(_recipeId));
+        }
 	}
 }
