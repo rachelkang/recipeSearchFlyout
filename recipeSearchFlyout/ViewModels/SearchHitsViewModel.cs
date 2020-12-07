@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace recipeSearchFlyout.ViewModels
 {
-	public class SearchResultsViewModel : BaseViewModel
+	public class SearchHitsViewModel : BaseViewModel
 	{
         RestService _restService;
 
@@ -20,7 +20,7 @@ namespace recipeSearchFlyout.ViewModels
         public Command<Hit> ItemTapped { get; }
         public Command<string[]> SearchCommand { get; }
 
-        public SearchResultsViewModel()
+        public SearchHitsViewModel()
         {
             Title = "Search all recipes";
             _restService = new RestService();

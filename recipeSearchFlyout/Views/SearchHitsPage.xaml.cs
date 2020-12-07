@@ -10,21 +10,16 @@ using recipeSearchFlyout.ViewModels;
 
 namespace recipeSearchFlyout.Views
 {
-	public partial class SearchResultsPage : ContentPage
+	public partial class SearchHitsPage : ContentPage
 	{
-		SearchResultsViewModel _viewModel;
+		SearchHitsViewModel _viewModel;
 
 		string[] _searchParams;
 
-		public SearchResultsPage(string[] searchParams)
+		public SearchHitsPage(string[] searchParams)
 		{
-			// MessagingCenter.Send(this, "ShowRecipeHits", searchParams);
-
 			InitializeComponent();
-			BindingContext = _viewModel = new SearchResultsViewModel();
-
-			//_viewModel.SearchQuery = searchParams[0];
-			//_viewModel.SearchFilter = searchParams[1];
+			BindingContext = _viewModel = new SearchHitsViewModel();
 
 			_searchParams = searchParams;
 		}
