@@ -10,10 +10,6 @@
              xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
              xmlns:anim="clr-namespace:Xamanimation;assembly=Xamanimation">
 
-    <ContentPage.BindingContext>
-        <vm:SearchResultsViewModel />
-    </ContentPage.BindingContext>
-
      <StackLayout Margin="5,5,5,0">
         <SearchBar x:Name="searchBar"
                    ios:SearchBar.SearchBarStyle="Default"
@@ -38,7 +34,7 @@
                                 <Label x:Name="recipeName" Padding="10" Text="{Binding Recipe.RecipeName}" LineBreakMode="WordWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" BackgroundColor="White"/>
                             </StackLayout>
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:RecipeSearchViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"/>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:SearchHitsViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"/>
                             </Frame.GestureRecognizers>
                         </Frame>
                     </sh:Shadows>

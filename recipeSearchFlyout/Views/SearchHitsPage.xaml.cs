@@ -22,6 +22,11 @@ namespace recipeSearchFlyout.Views
 			BindingContext = _viewModel = new SearchHitsViewModel();
 
 			_searchParams = searchParams;
+
+			MessagingCenter.Subscribe<SearchHitsViewModel, string>(this, "SelectRecipeHit", async (sender, hitId) =>
+			{
+				await Navigation.PushAsync(new HitDetailPage(hitId));
+			});
 		}
 
 		protected override void OnAppearing()
