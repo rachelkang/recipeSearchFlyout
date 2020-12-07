@@ -101,10 +101,9 @@ namespace recipeSearchFlyout.ViewModels
 
         private async void OnDelete()
         {
-            await DataStore.DeleteRecipeAsync(_id); // need to pass in ID of selected item somehow
+            await DataStore.DeleteRecipeAsync(_id);
 
 			MessagingCenter.Send(this, "RemoveDeletedRecipePage");
-			//MessagingCenter.Send(this, "PopOffCurrentModal");
 			MessagingCenter.Send(this, "PopOffCurrentModal");
         }
 

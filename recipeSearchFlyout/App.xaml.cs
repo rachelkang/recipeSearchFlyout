@@ -16,8 +16,6 @@ namespace recipeSearchFlyout
 
 			DependencyService.Register<MockDataStore>();
 			MainPage = new MainPage();
-
-			//MainPage = new NavigationPage(new MainPage());
 		}
 
 		public static RecipeData Data { get; set; }

@@ -14,7 +14,7 @@ namespace recipeSearchFlyout.Views
 
 			MessagingCenter.Subscribe<RecipeSearchViewModel, string[]>(this, "SearchRecipe", async (sender, searchParams) =>
 			{
-				await Navigation.PushAsync(new SearchResultsPage(searchParams));
+				await Navigation.PushAsync(new SearchHitsPage(searchParams));
 			});
 
 		}

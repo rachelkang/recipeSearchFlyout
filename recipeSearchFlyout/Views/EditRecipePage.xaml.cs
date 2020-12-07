@@ -23,7 +23,8 @@ namespace recipeSearchFlyout.Views
 			MessagingCenter.Subscribe<EditRecipeViewModel>(this, "PopOffCurrentModal", async (sender) =>
             {
                 await Navigation.PopModalAsync();
-            });        }
+            });
+        }
 
 		protected override void OnDisappearing()
 		{

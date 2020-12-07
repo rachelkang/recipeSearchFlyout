@@ -22,7 +22,7 @@ namespace recipeSearchFlyout.Views
 			InitializeComponent();
 			BindingContext = _viewModel = new MyRecipesViewModel();
 
-			MessagingCenter.Subscribe<MyRecipesViewModel, string>(this, "SelectRecipe", async (sender, id) =>
+			MessagingCenter.Subscribe<MyRecipesViewModel, string>(this, "SelectMyRecipe", async (sender, id) =>
 			{
 				await Navigation.PushAsync(new RecipeDetailPage(id));
 			});

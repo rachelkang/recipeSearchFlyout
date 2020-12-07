@@ -131,13 +131,12 @@ namespace recipeSearchFlyout.ViewModels
             return requestUri;
         }
 
-        async void OnItemSelected(Hit hit)
+        void OnItemSelected(Hit hit)
         {
             if (hit == null)
                 return;
 
-            // This will push the HitDetailPage onto the navigation stack
-            // await Shell.Current.GoToAsync($"{nameof(HitDetailPage)}?HitId={hit.Id}");
+            MessagingCenter.Send(this, "SelectRecipeHit", hit.Id);
         }
     }
 }

@@ -124,11 +124,11 @@ namespace recipeSearchFlyout.ViewModels
                 var emptyFormattedString = new FormattedString();
                 emptyFormattedString.Spans.Add(new Span { Text = "" });
 
-                RecipeNameVisible = !String.IsNullOrEmpty(RecipeName);
-                ImageUrlVisible = !String.IsNullOrEmpty(ImageUrl);
-                IngredientsVisible = !String.IsNullOrEmpty(Ingredients);
-                RecipeBodyVisible = !String.IsNullOrEmpty(RecipeBody);
-                RecipeUrlVisible = !(RecipeUrl == null || FormattedString.Equals(RecipeUrl, emptyFormattedString));
+                RecipeNameVisible = !string.IsNullOrEmpty(RecipeName);
+                ImageUrlVisible = !string.IsNullOrEmpty(ImageUrl);
+                IngredientsVisible = !string.IsNullOrEmpty(Ingredients);
+                RecipeBodyVisible = !string.IsNullOrEmpty(RecipeBody);
+                RecipeUrlVisible = !(RecipeUrl == null || Equals(RecipeUrl, emptyFormattedString));
 
             }
             catch (Exception)
