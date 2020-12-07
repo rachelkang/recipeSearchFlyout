@@ -8,7 +8,7 @@ namespace recipeSearchFlyout.ViewModels
 	{
         RestService _restService;
 
-        string _searchQuery; // private by default, _name convention
+        string _searchQuery;
         bool _recipeTypeButtonsVisible;
         string _noResultsLabel;
         bool _noResultsVisible;
@@ -73,11 +73,8 @@ namespace recipeSearchFlyout.ViewModels
                 {
                     NoResultsVisible = false;
 
-                    string urlEncodedFilter = System.Net.WebUtility.UrlEncode(filter);
-                    // await Shell.Current.GoToAsync($"{nameof(RecipeSearchPage)}?SearchQuery={SearchQuery}&SearchFilter={urlEncodedFilter}");
-
-                    // MessagingCenter.Send<RecipeSearchViewModel, string, string>(this, "SearchRecipe", SearchQuery, urlEncodedFilter);
-                    MessagingCenter.Send(this, "SearchRecipe", SearchQuery);
+                    string[] searchParams = { SearchQuery, filter };
+                    MessagingCenter.Send(this, "SearchRecipe", searchParams);
 
                     SearchQuery = string.Empty;
                     RecipeTypeButtonsVisible = true;
