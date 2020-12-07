@@ -15,33 +15,36 @@ namespace recipeSearchFlyout.Views
 {
 	public partial class MyRecipesPage : ContentPage
 	{
-		MyRecipesViewModel viewModel;
+		MyRecipesViewModel _viewModel;
 
 		public MyRecipesPage()
 		{
 			InitializeComponent();
+			BindingContext = _viewModel = new MyRecipesViewModel();
 
-			BindingContext = viewModel = new MyRecipesViewModel();
+			MessagingCenter.Subscribe<MyRecipesViewModel, string>(this, "SelectRecipe", async (sender, id) =>
+			{
+				await Navigation.PushAsync(new RecipeDetailPage(id));
+			});
+
+			MessagingCenter.Subscribe<EditRecipeViewModel>(this, "RemoveDeletedRecipePage", (sender) =>
+			{
+				Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1]);
+			});
 		}
 
-		async void OnItemSelected(object sender, EventArgs args)
+		async void NewRecipe_Clicked(object sender, EventArgs e)
 		{
-			var layout = (BindableObject)sender;
-			var recipe = (Models.Item)layout.BindingContext;
-			// await Navigation.PushAsync(new RecipeDetailPage(new RecipeDetailViewModel(recipe)));
-		}
-
-		async void AddItem_Clicked(object sender, EventArgs e)
-		{
-			await Navigation.PushModalAsync(new NavigationPage(new NewRecipePage()));
+			await Navigation.PushModalAsync(new NewRecipePage());
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
+			_viewModel.OnAppearing();
 
-			if (viewModel.Recipes.Count == 0)
-				viewModel.IsBusy = true;
+			if (_viewModel.Recipes.Count == 0)
+				_viewModel.IsBusy = true;
 		}
 	}
 }

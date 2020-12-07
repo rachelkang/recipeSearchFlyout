@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="recipeSearchFlyout.Views.MyRecipesPage"
              Title="{Binding Title}"
-             x:Name="BrowseItemsPage"
              xmlns:local="clr-namespace:recipeSearchFlyout.ViewModels"
              xmlns:model="clr-namespace:recipeSearchFlyout.Models"
              xmlns:anim="clr-namespace:Xamanimation;assembly=Xamanimation"
@@ -11,25 +10,25 @@
              xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="New" Command="{Binding NewItemCommand}" />
+        <ToolbarItem Text="New" Clicked="NewRecipe_Clicked" />
     </ContentPage.ToolbarItems>
 
     <StackLayout Margin="20" >
         <Label Text="Your recipes" FontSize="30" FontAttributes="Bold" TextColor="Black"/>
         <sh:Shadows CornerRadius="30" Shades="{sh:SingleShade Offset='0,2', BlurRadius=10, Opacity=0.20, Color='Black'}">
-            <CarouselView ItemsSource="{Binding Items}" Loop="False" Margin="0,0,0,15">
+            <CarouselView ItemsSource="{Binding Recipes}" Loop="False" Margin="0,0,0,15">
                 <CarouselView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="30" Orientation="Horizontal" />
                 </CarouselView.ItemsLayout>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Frame x:DataType="model:Item" CornerRadius="40" HasShadow="False">
-                            <StackLayout sharedTransitions:Transition.Name="recipeImageTransition" VerticalOptions="Center" HorizontalOptions="Center" Padding="-50">
+                            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="-50">
                                 <Image x:Name="recipeImageUrl" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="700" WidthRequest="400" Margin="0,-100,0,-400"/>
                                 <Label VerticalTextAlignment="Center" Text="{Binding RecipeName}" BackgroundColor="White" FontSize="30" FontAttributes="Bold" Padding="50,10" TextColor="Black"/>
                             </StackLayout>
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:MyRecipesViewModel}}, Path=ItemTapped}" CommandParameter="{Binding .}"/>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:MyRecipesViewModel}}, Path=RecipeTapped}" CommandParameter="{Binding .}"/>
                             </Frame.GestureRecognizers>
                         </Frame>
                     </DataTemplate>

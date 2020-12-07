@@ -24,7 +24,6 @@ namespace recipeSearchFlyout.ViewModels
             LoadRecipesCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
 			RecipeTapped = new Command<Item>(OnRecipeSelected);
-            NewRecipeCommand = new Command(OnNewRecipe);
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -69,18 +68,12 @@ namespace recipeSearchFlyout.ViewModels
             }
         }
 
-        private async void OnNewRecipe(object obj)
-        {
-            // await Shell.Current.GoToAsync(nameof(NewRecipePage));
-        }
-
-        async void OnRecipeSelected(Item recipe)
+        void OnRecipeSelected(Item recipe)
         {
             if (recipe == null)
                 return;
 
-            // This will push the ItemDetailPage onto the navigation stack
-            // await Shell.Current.GoToAsync($"{nameof(RecipeDetailPage)}?{nameof(RecipeDetailPage.ItemId)}={item.Id}");
+            MessagingCenter.Send(this, "SelectRecipe", recipe.Id);
         }
     }
 }
