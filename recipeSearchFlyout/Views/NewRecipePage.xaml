@@ -2,20 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="recipeSearchFlyout.Views.NewRecipePage"
-             Title="New Recipe">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
-    </ContentPage.ToolbarItems>
+             Title="New Recipe"
+             Visual="Material">
     
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Item.Text}" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
-        </StackLayout>
+        <Grid ColumnSpacing="10" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="4.5*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" FontSize="25" FontAttributes="Bold" Text="New recipe" TextColor="Black"/>
+            <Entry Grid.Column="0" Grid.Row="1" Placeholder="Recipe Name" PlaceholderColor="{StaticResource Primary}" BackgroundColor="White" Text="{Binding RecipeName, Mode=TwoWay}" IsSpellCheckEnabled="false" FontSize="Medium" VerticalTextAlignment="Start" />
+            <Entry Grid.Column="0" Grid.Row="2" Placeholder="Image URL" PlaceholderColor="{StaticResource Primary}" BackgroundColor="White" Text="{Binding ImageUrl, Mode=TwoWay}" IsSpellCheckEnabled="false" FontSize="Medium" VerticalTextAlignment="Start" />
+            <Editor Grid.Column="0" Grid.Row="3" Placeholder="Ingredients" PlaceholderColor="{StaticResource Primary}" BackgroundColor="White" Text="{Binding Ingredients, Mode=TwoWay}" IsSpellCheckEnabled="false" FontSize="Medium" Margin="0" />
+            <StackLayout Grid.Column="0" Grid.Row="4" >
+                <Editor Placeholder="Recipe" PlaceholderColor="{StaticResource Primary}" BackgroundColor="White" Text="{Binding RecipeBody, Mode=TwoWay}" IsSpellCheckEnabled="false" FontSize="Medium" Margin="0" />
+                <Label FontSize="Small" FormattedText="{Binding RecipeUrl}" FontAttributes="Italic" TextColor="Gray" HorizontalTextAlignment="End"/>
+            </StackLayout>
+            <StackLayout Grid.Column="0" Grid.Row="5" Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Save" Command="{Binding SaveCommand}" BackgroundColor="{StaticResource Primary}"  HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
     
 </ContentPage>

@@ -5,27 +5,23 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using recipeSearchFlyout.Models;
+using recipeSearchFlyout.ViewModels;
 
 namespace recipeSearchFlyout.Views
 {
 	public partial class NewRecipePage : ContentPage
 	{
-		public Item Item { get; set; }
+        public Recipe Recipe { get; set; }
 
-		public NewRecipePage()
-		{
-			InitializeComponent();
-		}
+        public NewRecipePage()
+        {
+            InitializeComponent();
+            BindingContext = new NewRecipeViewModel();
 
-		async void Save_Clicked(object sender, EventArgs e)
-		{
-			MessagingCenter.Send(this, "AddItem", Item);
-			await Navigation.PopModalAsync();
-		}
-
-		async void Cancel_Clicked(object sender, EventArgs e)
-		{
-			await Navigation.PopModalAsync();
-		}
-	}
+            MessagingCenter.Subscribe<NewRecipeViewModel>(this, "PopOffCurrentModal", async (sender) =>
+            {
+                await Navigation.PopModalAsync();
+            });
+        }
+    }
 }
