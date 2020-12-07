@@ -23,8 +23,7 @@
                    Text="{Binding SearchQuery}"
                    PlaceholderColor="Gray"
                    TextColor="Black"
-                   SearchCommand="{Binding SearchCommand}"
-                   SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
+                   SearchCommand="{Binding SearchCommand}"/>
         <Label Text="{Binding NoResultsLabel}" IsVisible="{Binding NoResultsLabelVisible}" Padding="20,0,20,0" HorizontalTextAlignment="Center" FontAttributes="Italic" TextColor="{StaticResource Primary}"/>
         <CollectionView x:Name="HitsListView" ItemsSource="{Binding RecipeData.Hits}" SelectionMode="None" Margin="10" IsVisible="{Binding SearchResultsVisible}" AutomationProperties.IsInAccessibleTree="true" AutomationProperties.Name="Search results list" AutomationProperties.HelpText="Select one of the search results to see recipe details">
             <CollectionView.ItemsLayout>

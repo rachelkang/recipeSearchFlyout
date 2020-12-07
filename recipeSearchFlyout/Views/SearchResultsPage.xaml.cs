@@ -14,16 +14,25 @@ namespace recipeSearchFlyout.Views
 	{
 		SearchResultsViewModel _viewModel;
 
-		public SearchResultsPage(string searchQuery)
+		string[] _searchParams;
+
+		public SearchResultsPage(string[] searchParams)
 		{
-			MessagingCenter.Send(this, "ShowRecipeHits", searchQuery);
+			// MessagingCenter.Send(this, "ShowRecipeHits", searchParams);
+
 			InitializeComponent();
+			BindingContext = _viewModel = new SearchResultsViewModel();
+
+			//_viewModel.SearchQuery = searchParams[0];
+			//_viewModel.SearchFilter = searchParams[1];
+
+			_searchParams = searchParams;
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			_viewModel.SearchCommand.Execute(null);
+			_viewModel.SearchCommand.Execute(_searchParams);
 		}
 	}
 }

@@ -7,7 +7,6 @@ using Xamarin.Forms;
 
 namespace recipeSearchFlyout.ViewModels
 {
-	[QueryProperty(nameof(SearchFilter), nameof(SearchFilter))]
 	public class SearchResultsViewModel : BaseViewModel
 	{
         RestService _restService;
@@ -19,7 +18,7 @@ namespace recipeSearchFlyout.ViewModels
         bool _searchResultsVisible;
 
         public Command<Hit> ItemTapped { get; }
-        public Command SearchCommand { get; }
+        public Command<string[]> SearchCommand { get; }
 
         public SearchResultsViewModel()
         {
@@ -28,13 +27,15 @@ namespace recipeSearchFlyout.ViewModels
             NoResultsLabelVisible = false;
             SearchResultsVisible = true;
 
-            MessagingCenter.Subscribe<SearchResultsPage, string>(this, "ShowRecipeHits", (sender, searchQuery) =>
-            {
-                SearchQuery = searchQuery;
-            });
-
             ItemTapped = new Command<Hit>(OnItemSelected);
-            SearchCommand = new Command(async () => await OnSearch());
+            SearchCommand = new Command<string[]>(async (searchParams) => {
+                if (searchParams != null)
+				{
+                    SearchQuery = searchParams[0];
+                    SearchFilter = searchParams[1];
+                }
+                await OnSearch();
+            });
         }
 
         public RecipeData RecipeData
@@ -71,11 +72,6 @@ namespace recipeSearchFlyout.ViewModels
 
         async Task OnSearch()
         {
-            //MessagingCenter.Subscribe<SearchResultsPage, string>(this, "ShowRecipeHits", (sender, searchQuery) =>
-            //{
-            //    SearchQuery = searchQuery;
-            //});
-
             NoResultsLabelVisible = false;
 
             if (!string.IsNullOrWhiteSpace(SearchQuery) || !string.IsNullOrWhiteSpace(SearchFilter))
@@ -100,22 +96,25 @@ namespace recipeSearchFlyout.ViewModels
 
                     RecipeData = recipeData;
                     App.Data = RecipeData;
-                    // AppShell.Data = RecipeData;
 
-                    OnPropertyChanged(nameof(RecipeData)); // tells Xaml view to update
+                    OnPropertyChanged(nameof(RecipeData));
                 }
-
-                // OnPropertyChanged(SearchQuery);
             }
         }
 
         string GenerateRequestUri(string endpoint)
         {
-            string searchFilterName = SearchFilter.Substring(SearchFilter.IndexOf("=") + 1);
+			string searchFilterName;
 
-            if (string.IsNullOrEmpty(SearchQuery))
+			if (!string.IsNullOrEmpty(SearchFilter))
             {
-                SearchQuery = searchFilterName;
+				searchFilterName = SearchFilter.Substring(SearchFilter.IndexOf("=") + 1);
+				Title = $"Search {searchFilterName} recipes";
+
+                if (string.IsNullOrEmpty(SearchQuery))
+                {
+                    SearchQuery = searchFilterName;
+                }
             }
 
             string requestUri = endpoint;
@@ -126,7 +125,6 @@ namespace recipeSearchFlyout.ViewModels
 
             if (!string.IsNullOrEmpty(SearchFilter))
             {
-                Title = $"Search {searchFilterName} recipes";
                 requestUri += $"&{SearchFilter}";
             }
 
