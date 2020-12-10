@@ -18,7 +18,7 @@ namespace recipeSearchFlyout.Views
             InitializeComponent();
             BindingContext = new NewRecipeViewModel();
 
-            MessagingCenter.Subscribe<NewRecipeViewModel>(this, "PopOffCurrentModal", async (sender) =>
+            MessagingCenter.Subscribe<NewRecipeViewModel>(this, MessageStrings.PopOffCurrentModal, async (sender) =>
             {
                 await Navigation.PopModalAsync();
             });

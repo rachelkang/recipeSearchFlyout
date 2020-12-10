@@ -96,15 +96,15 @@ namespace recipeSearchFlyout.ViewModels
 
         private void OnCancel()
         {
-            MessagingCenter.Send(this, "PopOffCurrentModal");
+            MessagingCenter.Send(this, MessageStrings.PopOffCurrentModal);
         }
 
         private async void OnDelete()
         {
             await DataStore.DeleteRecipeAsync(_id);
 
-			MessagingCenter.Send(this, "RemoveDeletedRecipePage");
-			MessagingCenter.Send(this, "PopOffCurrentModal");
+			MessagingCenter.Send(this, MessageStrings.RemoveDeletedRecipePage);
+			MessagingCenter.Send(this, MessageStrings.PopOffCurrentModal);
         }
 
         private async void OnUpdate()
@@ -121,7 +121,7 @@ namespace recipeSearchFlyout.ViewModels
 
             await DataStore.UpdateRecipeAsync(newItem);
 
-            MessagingCenter.Send(this, "PopOffCurrentModal");
+            MessagingCenter.Send(this, MessageStrings.PopOffCurrentModal);
         }
     }
 }

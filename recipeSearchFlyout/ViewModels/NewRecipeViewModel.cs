@@ -61,7 +61,7 @@ namespace recipeSearchFlyout.ViewModels
 
         private void OnCancel()
         {
-            MessagingCenter.Send(this, "PopOffCurrentModal");
+            MessagingCenter.Send(this, MessageStrings.PopOffCurrentModal);
         }
 
         private async void OnSave()
@@ -78,7 +78,7 @@ namespace recipeSearchFlyout.ViewModels
 
             await DataStore.AddRecipeAsync(newRecipe);
 
-            MessagingCenter.Send(this, "PopOffCurrentModal");
+            MessagingCenter.Send(this, MessageStrings.PopOffCurrentModal);
         }
     }
 }

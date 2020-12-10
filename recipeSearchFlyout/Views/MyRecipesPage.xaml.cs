@@ -22,12 +22,12 @@ namespace recipeSearchFlyout.Views
 			InitializeComponent();
 			BindingContext = _viewModel = new MyRecipesViewModel();
 
-			MessagingCenter.Subscribe<MyRecipesViewModel, string>(this, "SelectMyRecipe", async (sender, id) =>
+			MessagingCenter.Subscribe<MyRecipesViewModel, string>(this, MessageStrings.SelectMyRecipe, async (sender, id) =>
 			{
 				await Navigation.PushAsync(new RecipeDetailPage(id));
 			});
 
-			MessagingCenter.Subscribe<EditRecipeViewModel>(this, "RemoveDeletedRecipePage", (sender) =>
+			MessagingCenter.Subscribe<EditRecipeViewModel>(this, MessageStrings.RemoveDeletedRecipePage, (sender) =>
 			{
 				Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1]);
 			});

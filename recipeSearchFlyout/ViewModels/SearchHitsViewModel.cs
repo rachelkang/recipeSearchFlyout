@@ -136,7 +136,7 @@ namespace recipeSearchFlyout.ViewModels
             if (hit == null)
                 return;
 
-            MessagingCenter.Send(this, "SelectRecipeHit", hit.Id);
+            MessagingCenter.Send(this, MessageStrings.SelectRecipeHit, (hit.Id).ToString());
         }
     }
 }

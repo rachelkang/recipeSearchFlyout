@@ -73,7 +73,7 @@ namespace recipeSearchFlyout.ViewModels
             if (recipe == null)
                 return;
 
-            MessagingCenter.Send(this, "SelectMyRecipe", recipe.Id);
+            MessagingCenter.Send(this, MessageStrings.SelectMyRecipe, recipe.Id);
         }
     }
 }

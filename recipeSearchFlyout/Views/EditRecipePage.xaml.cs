@@ -20,7 +20,7 @@ namespace recipeSearchFlyout.Views
 
             _viewModel.Id = id;
 
-			MessagingCenter.Subscribe<EditRecipeViewModel>(this, "PopOffCurrentModal", async (sender) =>
+			MessagingCenter.Subscribe<EditRecipeViewModel>(this, MessageStrings.PopOffCurrentModal, async (sender) =>
             {
                 await Navigation.PopModalAsync();
             });
@@ -29,8 +29,8 @@ namespace recipeSearchFlyout.Views
 		protected override void OnDisappearing()
 		{
 			base.OnDisappearing();
-            MessagingCenter.Unsubscribe<EditRecipeViewModel>(this, "PopOffCurrentModal");
-            MessagingCenter.Unsubscribe<EditRecipeViewModel>(this, "RemoveDeletedRecipePage");
+            MessagingCenter.Unsubscribe<EditRecipeViewModel>(this, MessageStrings.PopOffCurrentModal);
+            MessagingCenter.Unsubscribe<EditRecipeViewModel>(this, MessageStrings.RemoveDeletedRecipePage);
         }
 	}
 }

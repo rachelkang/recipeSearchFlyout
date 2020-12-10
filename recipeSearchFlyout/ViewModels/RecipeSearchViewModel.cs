@@ -74,7 +74,7 @@ namespace recipeSearchFlyout.ViewModels
                     NoResultsVisible = false;
 
                     string[] searchParams = { SearchQuery, filter };
-                    MessagingCenter.Send(this, "SearchRecipe", searchParams);
+                    MessagingCenter.Send(this, MessageStrings.SearchRecipe, searchParams);
 
                     SearchQuery = string.Empty;
                     RecipeTypeButtonsVisible = true;

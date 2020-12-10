@@ -23,7 +23,7 @@ namespace recipeSearchFlyout.Views
 
 			_searchParams = searchParams;
 
-			MessagingCenter.Subscribe<SearchHitsViewModel, string>(this, "SelectRecipeHit", async (sender, hitId) =>
+			MessagingCenter.Subscribe<SearchHitsViewModel, string>(this, MessageStrings.SelectRecipeHit, async (sender, hitId) =>
 			{
 				await Navigation.PushAsync(new HitDetailPage(hitId));
 			});
@@ -32,6 +32,12 @@ namespace recipeSearchFlyout.Views
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
+
+			if (_viewModel.SearchQuery != null)
+			{
+				_searchParams[0] = _viewModel.SearchQuery;
+			}
+
 			_viewModel.SearchCommand.Execute(_searchParams);
 		}
 	}
