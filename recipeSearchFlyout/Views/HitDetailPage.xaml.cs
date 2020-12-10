@@ -23,7 +23,7 @@ namespace recipeSearchFlyout.Views
 			_viewModel.HitId = hitId;
 		}
 
-		async void AddItem_Clicked(System.Object sender, System.EventArgs e)
+		async void AddItem_Clicked(object sender, EventArgs e)
 		{
 			var messageOptions = new MessageOptions
 			{
