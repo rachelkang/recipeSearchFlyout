@@ -12,10 +12,10 @@
                 <GradientStop Color="White" Offset="0" />
                 <GradientStop Color="{StaticResource Primary}" Offset="1.0" />
             </LinearGradientBrush>
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Color x:Key="NavigationPrimary">#2BB0ED</Color>
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
-                <Setter Property="BarTextColor" Value="White" />
+                <Setter Property="BarBackgroundColor" Value="White" />
+                <Setter Property="BarTextColor" Value="{StaticResource NavigationPrimary}" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
